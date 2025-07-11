@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Using the colors defined in the HTML's tailwind config */
+  /* Primary color: #738A7E (Muted Green) */
+  --background: #849372;
+  /* Secondary color: #F5F2DF (Off-White/Light Tan) */
+  --foreground: #F6F2DC;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans); /* Keeping existing variables, if applicable */
+  --font-mono: var(--font-geist-mono); /* Keeping existing variables, if applicable */
+  /* Adding font definitions based on HTML file */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans-html: 'Montserrat', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Using colors consistent with the defined primary/secondary colors for dark mode */
+    --background: #4a5d54; 
+    --foreground: #F5F2DF;
   }
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Applying the serif font defined in the HTML config for the body font */
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbar styles matching the primary and secondary colors from the HTML config */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e0dcc7;
 }
