@@ -4,8 +4,7 @@ import React from 'react';
 const Header: React.FC = () => {
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'AI Tools', href: '#ai-tools' },
+    { name: 'Services', href: '#services' }
   ];
 
   return (
